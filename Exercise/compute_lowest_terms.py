@@ -6,8 +6,15 @@ def lowest_terms(x):
 	num, den = x.split('/')
 	num = int(num)
 	den = int(den)
-	x = reduceFraction(num, den)
-	return x 
+	if num and den > 0:
+		x = reduceFraction(num, den)
+		return x 
+	elif den == 0:
+		x = "Undefined"
+		return x 
+	elif num == 0:
+		x = "0"
+		return x
 
 	
 
