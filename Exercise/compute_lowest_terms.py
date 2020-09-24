@@ -21,6 +21,15 @@ def lowest_terms(x):
 	elif num < 0 and den > 0:
 		x = reduceFraction(num, den)
 		return x
+	elif num < 0 and den < 0:
+		x = reduceFraction(num, den)
+		num, den = x.split('/')
+		num = int(num)
+		den = int(den)
+		num = num * -1
+		den = den * -1
+		x = str(num) + '/' + str(den)
+		return x 
 	elif den == 0:
 		x = "Undefined"
 		return x 
